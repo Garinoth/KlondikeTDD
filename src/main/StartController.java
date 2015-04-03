@@ -23,10 +23,10 @@ public class StartController {
 		this.tableaus = new ArrayList<Tableau>();
 		for (int i = 0; i < TABLEAUS; i++) {
 			Tableau tableau = new Tableau();
-			for (int j = 0; j < i; j++) {
+			for (int j = 0; j < i+1; j++) {
 				tableau.addCard(new Card());
 			}
-			this.tableaus.add(new Tableau());
+			this.tableaus.add(tableau);
 		}
 		
 		this.deck = new Deck();
