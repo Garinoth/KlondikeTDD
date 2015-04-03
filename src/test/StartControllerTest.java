@@ -27,8 +27,11 @@ public class StartControllerTest {
 	@Test
 	public void peeksEachTableauTest() {
 		ArrayList<Card> peeksEachTableau = startController.peeksEachTableau();
+		ArrayList<Card> checkedCards = new ArrayList<Card>();
 		for (Card card : peeksEachTableau) {
 			assertTrue(card.isUpturned());
+			assertFalse(checkedCards.contains(card));
+			checkedCards.add(card);
 		}
 	}
 
