@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class StartController {
 
 	private final int FOUNDATIONS = 4;
-	private final int TABLEAUS = 4;
+	private final int TABLEAUS = 7;
 	
 	private ArrayList<Foundation> foundations;
 	private ArrayList<Card> waste;

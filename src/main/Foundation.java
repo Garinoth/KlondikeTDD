@@ -1,17 +1,5 @@
 package main;
 
-import java.util.ArrayList;
-
-public class Foundation {
+public class Foundation extends CardGroup {
 	
-	private ArrayList<Card> cards;
-	
-	public Foundation() {
-		this.cards = new ArrayList<Card>();
-	}
-
-	public boolean isEmpty() {
-		return this.cards.isEmpty();
-	}
-
 }
