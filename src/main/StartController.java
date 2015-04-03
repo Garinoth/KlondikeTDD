@@ -20,4 +20,8 @@ public class StartController {
 		return peeksEachTableau;
 	}
 
+	public boolean isEmptyWaste() {
+		return true;
+	}
+
 }

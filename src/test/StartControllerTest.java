@@ -25,6 +25,11 @@ public class StartControllerTest {
 	}
 	
 	@Test
+	public void isEmptyWasteTest() {
+		assertTrue(startController.isEmptyWaste());
+	}
+	
+	@Test
 	public void peeksEachTableauTest() {
 		ArrayList<Card> peeksEachTableau = startController.peeksEachTableau();
 		ArrayList<Card> checkedCards = new ArrayList<Card>();
