@@ -8,6 +8,10 @@ public class StartController {
 		return true;
 	}
 
+	public boolean isEmptyWaste() {
+		return true;
+	}
+	
 	public ArrayList<Card> peeksEachTableau() {
 		ArrayList<Card> peeksEachTableau = new ArrayList<Card>();
 		peeksEachTableau.add(new Card());
@@ -20,8 +24,8 @@ public class StartController {
 		return peeksEachTableau;
 	}
 
-	public boolean isEmptyWaste() {
-		return true;
+	public Object getDeckSize() {
+		return 24;
 	}
 
 }

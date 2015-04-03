@@ -30,6 +30,11 @@ public class StartControllerTest {
 	}
 	
 	@Test
+	public void deckSizeTest() {
+		assertEquals(24, startController.getDeckSize());
+	}
+	
+	@Test
 	public void peeksEachTableauTest() {
 		ArrayList<Card> peeksEachTableau = startController.peeksEachTableau();
 		ArrayList<Card> checkedCards = new ArrayList<Card>();
