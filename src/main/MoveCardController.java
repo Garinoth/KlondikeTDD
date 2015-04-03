@@ -11,4 +11,9 @@ public class MoveCardController {
 		
 	}
 
+	public int getDeckSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

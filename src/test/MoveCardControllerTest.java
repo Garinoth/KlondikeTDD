@@ -11,7 +11,7 @@ public class MoveCardControllerTest {
 	
 	@Before
 	public void before() {
-		moveCardController = new MoveCardController();
+		moveCardController = new MoveCardController(0, 0);
 	}
 
 	@Test
@@ -24,7 +24,6 @@ public class MoveCardControllerTest {
 		
 		int initialDeckSize1 = moveCardController1.getDeckSize();
 		moveCardController1.moveFromDeckToWaste();
-		assertTrue();
 	}
 
 }
