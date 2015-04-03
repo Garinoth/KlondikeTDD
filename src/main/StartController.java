@@ -22,8 +22,14 @@ public class StartController {
 		
 		this.tableaus = new ArrayList<Tableau>();
 		for (int i = 0; i < TABLEAUS; i++) {
+			Tableau tableau = new Tableau();
+			for (int j = 0; j < i; j++) {
+				tableau.addCard(new Card());
+			}
 			this.tableaus.add(new Tableau());
 		}
+		
+		this.deck = new Deck();
 	}
 	
 	public boolean isEmptyAllFoundation() {
@@ -60,13 +66,9 @@ public class StartController {
 
 	public ArrayList<Integer> getSizeEachTableau() {
 		ArrayList<Integer> sizeEachTableau = new ArrayList<Integer>();
-		sizeEachTableau.add(1);
-		sizeEachTableau.add(2);
-		sizeEachTableau.add(3);
-		sizeEachTableau.add(4);
-		sizeEachTableau.add(5);
-		sizeEachTableau.add(6);
-		sizeEachTableau.add(7);
+		for (Tableau tableau : tableaus) {
+			sizeEachTableau.add(tableau.size());
+		}
 		return sizeEachTableau;
 	}
 

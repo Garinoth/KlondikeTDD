@@ -17,4 +17,12 @@ public class CardGroup {
 	public int size() {
 		return this.cards.size();
 	}
+
+	public ArrayList<Card> getCards() {
+		return cards;
+	}
+	
+	public void addCard(Card card) {
+		this.cards.add(card);
+	}
 }
