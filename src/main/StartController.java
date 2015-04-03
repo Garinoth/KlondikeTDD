@@ -4,8 +4,28 @@ import java.util.ArrayList;
 
 public class StartController {
 
+	private ArrayList<ArrayList<Card>> foundations;
+	
+	public StartController() {
+		this.foundations = new ArrayList<ArrayList<Card>>();
+		this.foundations.add(new ArrayList<Card>());
+		this.foundations.add(new ArrayList<Card>());
+		this.foundations.add(new ArrayList<Card>());
+		this.foundations.add(new ArrayList<Card>());
+		
+		
+	}
+	
 	public boolean isEmptyAllFoundation() {
-		return true;
+		boolean result = true;
+		for (ArrayList<Card> foundation : this.getFoundations()) {
+			result = result && foundation.isEmpty();
+		}
+		return result;
+	}
+
+	private ArrayList<ArrayList<Card>> getFoundations() {
+		return foundations;
 	}
 
 	public boolean isEmptyWaste() {
