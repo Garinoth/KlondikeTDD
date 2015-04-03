@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class StartController {
 
 	private ArrayList<ArrayList<Card>> foundations;
+	private ArrayList<Card> waste;
 	
 	public StartController() {
 		this.foundations = new ArrayList<ArrayList<Card>>();
@@ -13,7 +14,7 @@ public class StartController {
 		this.foundations.add(new ArrayList<Card>());
 		this.foundations.add(new ArrayList<Card>());
 		
-		
+		this.waste = new ArrayList<Card>();
 	}
 	
 	public boolean isEmptyAllFoundation() {
@@ -25,13 +26,17 @@ public class StartController {
 	}
 
 	private ArrayList<ArrayList<Card>> getFoundations() {
-		return foundations;
+		return this.foundations;
 	}
 
 	public boolean isEmptyWaste() {
-		return true;
+		return this.getWaste().isEmpty();
 	}
 	
+	private ArrayList<Card> getWaste() {
+		return this.waste;
+	}
+
 	public ArrayList<Card> peeksEachTableau() {
 		ArrayList<Card> peeksEachTableau = new ArrayList<Card>();
 		peeksEachTableau.add(new Card());
