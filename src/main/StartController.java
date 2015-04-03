@@ -47,13 +47,9 @@ public class StartController {
 
 	public ArrayList<Card> peeksEachTableau() {
 		ArrayList<Card> peeksEachTableau = new ArrayList<Card>();
-		peeksEachTableau.add(new Card());
-		peeksEachTableau.add(new Card());
-		peeksEachTableau.add(new Card());
-		peeksEachTableau.add(new Card());
-		peeksEachTableau.add(new Card());
-		peeksEachTableau.add(new Card());
-		peeksEachTableau.add(new Card());
+		for (Tableau tableau : tableaus) {
+			peeksEachTableau.add(tableau.peek());
+		}
 		return peeksEachTableau;
 	}
 
