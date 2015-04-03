@@ -8,7 +8,7 @@ public class StartController {
 	private final int TABLEAUS = 7;
 	
 	private ArrayList<Foundation> foundations;
-	private ArrayList<Card> waste;
+	private Waste waste;
 	private ArrayList<Tableau> tableaus;
 	
 	public StartController() {
@@ -17,7 +17,7 @@ public class StartController {
 			this.foundations.add(new Foundation());
 		}
 		
-		this.waste = new ArrayList<Card>();
+		this.waste = new Waste();
 		
 		this.tableaus = new ArrayList<Tableau>();
 		for (int i = 0; i < TABLEAUS; i++) {
@@ -41,7 +41,7 @@ public class StartController {
 		return this.getWaste().isEmpty();
 	}
 	
-	private ArrayList<Card> getWaste() {
+	private Waste getWaste() {
 		return this.waste;
 	}
 
