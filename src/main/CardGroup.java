@@ -14,4 +14,7 @@ public class CardGroup {
 		return this.cards.isEmpty();
 	}
 	
+	public int size() {
+		return this.cards.size();
+	}
 }

@@ -10,6 +10,7 @@ public class StartController {
 	private ArrayList<Foundation> foundations;
 	private Waste waste;
 	private ArrayList<Tableau> tableaus;
+	private Deck deck;
 	
 	public StartController() {
 		this.foundations = new ArrayList<Foundation>();
@@ -54,7 +55,7 @@ public class StartController {
 	}
 
 	public Object getDeckSize() {
-		return 24;
+		return this.deck.size();
 	}
 
 	public ArrayList<Integer> getSizeEachTableau() {
