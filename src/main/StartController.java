@@ -4,38 +4,36 @@ import java.util.ArrayList;
 
 public class StartController {
 
-	private ArrayList<ArrayList<Card>> foundations;
+	private final int FOUNDATIONS = 4;
+	private final int TABLEAUS = 4;
+	
+	private ArrayList<Foundation> foundations;
 	private ArrayList<Card> waste;
-	private ArrayList<ArrayList<Card>> tableaus;
+	private ArrayList<Tableau> tableaus;
 	
 	public StartController() {
-		this.foundations = new ArrayList<ArrayList<Card>>();
-		this.foundations.add(new ArrayList<Card>());
-		this.foundations.add(new ArrayList<Card>());
-		this.foundations.add(new ArrayList<Card>());
-		this.foundations.add(new ArrayList<Card>());
+		this.foundations = new ArrayList<Foundation>();
+		for (int i = 0; i < FOUNDATIONS; i++) {
+			this.foundations.add(new Foundation());
+		}
 		
 		this.waste = new ArrayList<Card>();
 		
-		this.tableaus = new ArrayList<ArrayList<Card>>();
-		this.tableaus.add(new ArrayList<Card>());
-		this.tableaus.add(new ArrayList<Card>());
-		this.tableaus.add(new ArrayList<Card>());
-		this.tableaus.add(new ArrayList<Card>());
-		this.tableaus.add(new ArrayList<Card>());
-		this.tableaus.add(new ArrayList<Card>());
-		this.tableaus.add(new ArrayList<Card>());
+		this.tableaus = new ArrayList<Tableau>();
+		for (int i = 0; i < TABLEAUS; i++) {
+			this.tableaus.add(new Tableau());
+		}
 	}
 	
 	public boolean isEmptyAllFoundation() {
 		boolean result = true;
-		for (ArrayList<Card> foundation : this.getFoundations()) {
+		for (Foundation foundation : this.getFoundations()) {
 			result = result && foundation.isEmpty();
 		}
 		return result;
 	}
 
-	private ArrayList<ArrayList<Card>> getFoundations() {
+	private ArrayList<Foundation> getFoundations() {
 		return this.foundations;
 	}
 
