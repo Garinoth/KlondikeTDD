@@ -44,5 +44,12 @@ public class StartControllerTest {
 			checkedCards.add(card);
 		}
 	}
-
+	
+	@Test
+	public void sizeEachTableauTest() {
+		ArrayList<Integer> sizeEachTableau = startController.getSizeEachTableau();
+		for (int i = 0; i < sizeEachTableau.size(); i++) {
+			assertTrue(i+1 == sizeEachTableau.get(i));
+		}
+	}
 }

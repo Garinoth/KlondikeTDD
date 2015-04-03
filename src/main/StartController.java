@@ -28,4 +28,16 @@ public class StartController {
 		return 24;
 	}
 
+	public ArrayList<Integer> getSizeEachTableau() {
+		ArrayList<Integer> sizeEachTableau = new ArrayList<Integer>();
+		sizeEachTableau.add(1);
+		sizeEachTableau.add(2);
+		sizeEachTableau.add(3);
+		sizeEachTableau.add(4);
+		sizeEachTableau.add(5);
+		sizeEachTableau.add(6);
+		sizeEachTableau.add(7);
+		return sizeEachTableau;
+	}
+
 }
