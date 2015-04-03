@@ -27,7 +27,9 @@ public class StartControllerTest {
 	@Test
 	public void peeksEachTableauTest() {
 		ArrayList<Card> peeksEachTableau = startController.peeksEachTableau();
-		
+		for (Card card : peeksEachTableau) {
+			assertTrue(card.isUpturned());
+		}
 	}
 
 }

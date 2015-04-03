@@ -9,8 +9,15 @@ public class StartController {
 	}
 
 	public ArrayList<Card> peeksEachTableau() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Card> peeksEachTableau = new ArrayList<Card>();
+		peeksEachTableau.add(new Card());
+		peeksEachTableau.add(new Card());
+		peeksEachTableau.add(new Card());
+		peeksEachTableau.add(new Card());
+		peeksEachTableau.add(new Card());
+		peeksEachTableau.add(new Card());
+		peeksEachTableau.add(new Card());
+		return peeksEachTableau;
 	}
 
 }
