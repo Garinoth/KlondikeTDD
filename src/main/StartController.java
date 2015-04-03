@@ -6,6 +6,7 @@ public class StartController {
 
 	private ArrayList<ArrayList<Card>> foundations;
 	private ArrayList<Card> waste;
+	private ArrayList<ArrayList<Card>> tableaus;
 	
 	public StartController() {
 		this.foundations = new ArrayList<ArrayList<Card>>();
@@ -15,6 +16,15 @@ public class StartController {
 		this.foundations.add(new ArrayList<Card>());
 		
 		this.waste = new ArrayList<Card>();
+		
+		this.tableaus = new ArrayList<ArrayList<Card>>();
+		this.tableaus.add(new ArrayList<Card>());
+		this.tableaus.add(new ArrayList<Card>());
+		this.tableaus.add(new ArrayList<Card>());
+		this.tableaus.add(new ArrayList<Card>());
+		this.tableaus.add(new ArrayList<Card>());
+		this.tableaus.add(new ArrayList<Card>());
+		this.tableaus.add(new ArrayList<Card>());
 	}
 	
 	public boolean isEmptyAllFoundation() {
