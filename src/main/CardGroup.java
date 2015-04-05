@@ -25,4 +25,23 @@ public class CardGroup {
 	public void addCard(Card card) {
 		this.cards.add(card);
 	}
+	
+	public void addCards(ArrayList<Card> cards) {
+		for (Card card : cards) {
+			this.addCard(card);
+		}
+	}
+	
+	private Card drawCard() {
+		return this.getCards().remove(0);
+	}
+	
+	public ArrayList<Card> drawCards(int amount) {
+		assert this.size() >= amount;
+		ArrayList<Card> result = new ArrayList<Card>();
+		for (int i = 0; i < amount; i++) {
+			result.add(this.drawCard());
+		}
+		return result;
+	}
 }
