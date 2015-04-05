@@ -2,7 +2,6 @@ package test;
 import static org.junit.Assert.assertTrue;
 import main.MoveCardController;
 
-import org.junit.Before;
 import org.junit.Test;
 
 
@@ -41,5 +40,14 @@ public class MoveCardControllerTest {
 		assertTrue(moveCardController6.getDeckSize() == 1);
 		assertTrue(moveCardController6.getWasteSize() == 3);
 	}
-
+	
+	@Test
+	public void MoveFromWasteToFoundationTest() {
+		
+	}
+	
+	@Test
+	public void MoveFromWasteToTableauTest() {
+		
+	}
 }
