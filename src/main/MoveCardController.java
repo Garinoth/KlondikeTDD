@@ -34,4 +34,12 @@ public class MoveCardController {
 		return this.waste.size();
 	}
 
+	public void moveFromWasteToFoundation(Foundation foundation) {
+		Card card = this.deck.peekCard();
+		if (foundation.acceptsCard(card)) {
+			this.deck.drawCard();
+			foundation.addCard(card);
+		}
+	}
+
 }

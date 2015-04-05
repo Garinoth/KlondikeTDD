@@ -11,5 +11,11 @@ public class Foundation extends CardGroup {
 	public Suits getSuit() {
 		return suit;
 	}
-	
+
+	public boolean acceptsCard(Card card) {
+		if (card.getSuit() == this.getSuit() && card.getValue() == this.peekTopCard().getValue() + 1) {
+			
+		}
+		return false;
+	}	
 }
