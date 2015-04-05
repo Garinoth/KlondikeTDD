@@ -35,11 +35,13 @@ public class MoveCardController {
 	}
 
 	public void moveFromWasteToFoundation(Foundation foundation) {
-		Card card = this.deck.peekCard();
-		if (foundation.acceptsCard(card)) {
-			this.deck.drawCard();
-			foundation.addCard(card);
+		if (foundation.acceptsCard(this.deck.peekCard())) {
+			foundation.addCard(this.deck.drawCard());
 		}
+	}
+
+	public CardGroup getWaste() {
+		return this.waste;
 	}
 
 }

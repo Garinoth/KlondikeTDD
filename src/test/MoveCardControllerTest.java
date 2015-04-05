@@ -1,5 +1,6 @@
 package test;
 import static org.junit.Assert.assertTrue;
+import main.Card;
 import main.Foundation;
 import main.MoveCardController;
 import main.Suits;
@@ -50,6 +51,7 @@ public class MoveCardControllerTest {
 		// check order
 		MoveCardController moveCardController = new MoveCardController(24);
 		Foundation foundation = new Foundation(Suits.SPADES);
+		moveCardController.getWaste().addCard(new Card(5, Suits.SPADES));
 		moveCardController.moveFromWasteToFoundation(foundation);
 	}
 	
