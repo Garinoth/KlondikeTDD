@@ -15,6 +15,7 @@ public class MoveCardControllerTest {
 		MoveCardController moveCardController3 = new MoveCardController(2,0);
 		MoveCardController moveCardController4 = new MoveCardController(1,0);
 		MoveCardController moveCardController5 = new MoveCardController(0,0);
+		MoveCardController moveCardController6 = new MoveCardController(4,0);
 		
 		moveCardController1.moveFromDeckToWaste();
 		assertTrue(moveCardController1.getDeckSize() == 21);
@@ -35,6 +36,10 @@ public class MoveCardControllerTest {
 		moveCardController5.moveFromDeckToWaste();
 		assertTrue(moveCardController5.getDeckSize() == 0);
 		assertTrue(moveCardController5.getWasteSize() == 0);
+		
+		moveCardController6.moveFromDeckToWaste();
+		assertTrue(moveCardController6.getDeckSize() == 1);
+		assertTrue(moveCardController6.getWasteSize() == 3);
 	}
 
 }
