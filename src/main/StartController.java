@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class StartController {
 
-	private final int FOUNDATIONS = 4;
 	private final int TABLEAUS = 7;
 	
 	private ArrayList<Foundation> foundations;
@@ -14,8 +13,8 @@ public class StartController {
 	
 	public StartController() {
 		this.foundations = new ArrayList<Foundation>();
-		for (int i = 0; i < FOUNDATIONS; i++) {
-			this.foundations.add(new Foundation());
+		for (int i = 0; i < Suits.values().length; i++) {
+			this.foundations.add(new Foundation(Suits.values()[i]));
 		}
 		
 		this.waste = new Waste();
