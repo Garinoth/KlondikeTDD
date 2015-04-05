@@ -9,12 +9,12 @@ public class MoveCardControllerTest {
 
 	@Test
 	public void MoveFromDeckToWasteTest() {
-		MoveCardController moveCardController1 = new MoveCardController(24,0);
-		MoveCardController moveCardController2 = new MoveCardController(3,0);
-		MoveCardController moveCardController3 = new MoveCardController(2,0);
-		MoveCardController moveCardController4 = new MoveCardController(1,0);
-		MoveCardController moveCardController5 = new MoveCardController(0,0);
-		MoveCardController moveCardController6 = new MoveCardController(4,0);
+		MoveCardController moveCardController1 = new MoveCardController(24);
+		MoveCardController moveCardController2 = new MoveCardController(3);
+		MoveCardController moveCardController3 = new MoveCardController(2);
+		MoveCardController moveCardController4 = new MoveCardController(1);
+		MoveCardController moveCardController5 = new MoveCardController(0);
+		MoveCardController moveCardController6 = new MoveCardController(4);
 		
 		moveCardController1.moveFromDeckToWaste();
 		assertTrue(moveCardController1.getDeckSize() == 21);
@@ -43,7 +43,10 @@ public class MoveCardControllerTest {
 	
 	@Test
 	public void MoveFromWasteToFoundationTest() {
-		
+		// TODO: waste -1 foundation +1
+		// check suit
+		// check order
+		MoveCardController moveCardController = new MoveCardController(24);
 	}
 	
 	@Test
