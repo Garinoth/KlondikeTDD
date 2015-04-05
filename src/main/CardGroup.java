@@ -32,7 +32,7 @@ public class CardGroup {
 		}
 	}
 	
-	private Card drawCard() {
+	public Card drawCard() {
 		return this.getCards().remove(0);
 	}
 	
