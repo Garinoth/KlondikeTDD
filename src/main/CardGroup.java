@@ -1,13 +1,14 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class CardGroup {
 
-	private ArrayList<Card> cards;
+	private Stack<Card> cards;
 	
 	public CardGroup() {
-		this.cards = new ArrayList<Card>();
+		this.cards = new Stack<Card>();
 	}
 
 	public boolean isEmpty() {
@@ -18,7 +19,7 @@ public class CardGroup {
 		return this.cards.size();
 	}
 
-	public ArrayList<Card> getCards() {
+	public Stack<Card> getCards() {
 		return cards;
 	}
 	
@@ -33,34 +34,25 @@ public class CardGroup {
 	}
 	
 	public Card peekCard() {
-		return this.peekCard(0);
+		return this.getCards().peek();
 	}
 	
-	public Card peekCard(int position) {
-		return this.getCards().get(position);
-	}
-	
-	public ArrayList<Card> peekCards(int amount) {
+	public Stack<Card> peekCards(int amount) {
 		assert this.size() >= amount;
-		ArrayList<Card> result = new ArrayList<Card>();
+		Stack<Card> result = new Stack<Card>();
 		for (int i = 0; i < amount; i++) {
 			result.add(this.peekCard());
 		}
 		return result;
-	}
-	
-
-	public Card peekTopCard() {
-		return this.peekCard(this.getCards().size()-1);
-	}
+	} 
 	
 	public Card drawCard() {
-		return this.getCards().remove(0);
+		return this.getCards().pop();
 	}
 	
-	public ArrayList<Card> drawCards(int amount) {
+	public Stack<Card> drawCards(int amount) {
 		assert this.size() >= amount;
-		ArrayList<Card> result = new ArrayList<Card>();
+		Stack<Card> result = new Stack<Card>();
 		for (int i = 0; i < amount; i++) {
 			result.add(this.drawCard());
 		}
