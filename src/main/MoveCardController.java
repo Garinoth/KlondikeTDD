@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class MoveCardController {
 	
@@ -15,13 +16,13 @@ public class MoveCardController {
 
 	public void moveFromDeckToWaste() {
 		if (this.deck.size() >= 3) {
-			ArrayList<Card> cards = this.deck.drawCards(3);
+			Stack<Card> cards = this.deck.drawCards(3);
 			this.waste.addCards(cards);
 		} else if (this.deck.size() == 2){
-			ArrayList<Card> cards = this.deck.drawCards(2);
+			Stack<Card> cards = this.deck.drawCards(2);
 			this.waste.addCards(cards);
 		} else if (this.deck.size() == 1){
-			ArrayList<Card> cards = this.deck.drawCards(1);
+			Stack<Card> cards = this.deck.drawCards(1);
 			this.waste.addCards(cards);
 		}
 	}
@@ -35,7 +36,7 @@ public class MoveCardController {
 	}
 
 	public void moveFromWasteToFoundation(Foundation foundation) {
-		if (foundation.acceptsCard(this.waste.peekTopCard())) {
+		if (foundation.acceptsCard(this.waste.peek())) {
 			foundation.addCard(this.waste.drawCard());
 		}
 	}

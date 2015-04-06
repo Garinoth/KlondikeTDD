@@ -1,6 +1,5 @@
 package main;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 public class CardGroup {
@@ -27,13 +26,13 @@ public class CardGroup {
 		this.cards.add(card);
 	}
 	
-	public void addCards(ArrayList<Card> cards) {
+	public void addCards(Stack<Card> cards) {
 		for (Card card : cards) {
 			this.addCard(card);
 		}
 	}
 	
-	public Card peekCard() {
+	public Card peek() {
 		return this.getCards().peek();
 	}
 	
@@ -41,7 +40,7 @@ public class CardGroup {
 		assert this.size() >= amount;
 		Stack<Card> result = new Stack<Card>();
 		for (int i = 0; i < amount; i++) {
-			result.add(this.peekCard());
+			result.add(this.peek());
 		}
 		return result;
 	} 

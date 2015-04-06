@@ -61,7 +61,7 @@ public class MoveCardControllerTest {
 		moveCardController.moveFromWasteToFoundation(foundation);
 		assertTrue(wasteSize == moveCardController.getWasteSize());
 		assertTrue(foundationSize == foundation.size());
-		assertNotEquals(card, foundation.peekTopCard());
+		assertNotEquals(card, foundation.peek());
 		
 		moveCardController = new MoveCardController(24);
 		foundation = new Foundation(Suits.SPADES);
@@ -76,7 +76,7 @@ public class MoveCardControllerTest {
 		moveCardController.moveFromWasteToFoundation(foundation);
 		assertTrue(wasteSize - 1 == moveCardController.getWasteSize());
 		assertTrue(foundationSize + 1 == foundation.size());
-		assertEquals(card, foundation.peekTopCard());
+		assertEquals(card, foundation.peek());
 		
 		moveCardController = new MoveCardController(24);
 		foundation = new Foundation(Suits.SPADES);
@@ -87,7 +87,7 @@ public class MoveCardControllerTest {
 		moveCardController.moveFromWasteToFoundation(foundation);
 		assertTrue(wasteSize - 1 == moveCardController.getWasteSize());
 		assertTrue(foundationSize + 1 == foundation.size());
-		assertEquals(card, foundation.peekTopCard());
+		assertEquals(card, foundation.peek());
 		
 		moveCardController = new MoveCardController(24);
 		foundation = new Foundation(Suits.SPADES);
@@ -102,7 +102,7 @@ public class MoveCardControllerTest {
 		moveCardController.moveFromWasteToFoundation(foundation);
 		assertTrue(wasteSize == moveCardController.getWasteSize());
 		assertTrue(foundationSize == foundation.size());
-		assertNotEquals(card, foundation.peekTopCard());
+		assertNotEquals(card, foundation.peek());
 		
 		moveCardController = new MoveCardController(24);
 		foundation = new Foundation(Suits.SPADES);
@@ -117,7 +117,7 @@ public class MoveCardControllerTest {
 		moveCardController.moveFromWasteToFoundation(foundation);
 		assertTrue(wasteSize == moveCardController.getWasteSize());
 		assertTrue(foundationSize == foundation.size());
-		assertNotEquals(card, foundation.peekTopCard());
+		assertNotEquals(card, foundation.peek());
 	}
 	
 	@Test

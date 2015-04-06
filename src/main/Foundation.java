@@ -13,6 +13,6 @@ public class Foundation extends CardGroup {
 	}
 
 	public boolean acceptsCard(Card card) {
-		return card.getSuit() == this.getSuit() && card.getValue() == this.peekTopCard().getValue() + 1;
+		return card.getSuit() == this.getSuit() && card.getValue() == this.peek().getValue() + 1;
 	}	
 }
