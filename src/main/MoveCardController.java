@@ -35,8 +35,8 @@ public class MoveCardController {
 	}
 
 	public void moveFromWasteToFoundation(Foundation foundation) {
-		if (foundation.acceptsCard(this.deck.peekCard())) {
-			foundation.addCard(this.deck.drawCard());
+		if (foundation.acceptsCard(this.waste.peekTopCard())) {
+			foundation.addCard(this.waste.drawCard());
 		}
 	}
 

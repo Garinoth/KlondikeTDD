@@ -46,15 +46,74 @@ public class MoveCardControllerTest {
 	
 	@Test
 	public void MoveFromWasteToFoundationTest() {
-		// TODO: waste -1 foundation +1
-		// check suit
-		// check order
-		MoveCardController moveCardController = new MoveCardController(24);
-		Foundation foundation = new Foundation(Suits.SPADES);
-		Card card = new Card(5, Suits.SPADES);
+		MoveCardController moveCardController;
+		Foundation foundation;
+		Card card;
+		int wasteSize;
+		int foundationSize;
+		
+		moveCardController = new MoveCardController(24);
+		foundation = new Foundation(Suits.SPADES);
+		card = new Card(5, Suits.SPADES);
 		moveCardController.addCardToWaste(card);
-		int wasteSize = moveCardController.getWasteSize();
-		int foundationSize = foundation.size();
+		wasteSize = moveCardController.getWasteSize();
+		foundationSize = foundation.size();
+		moveCardController.moveFromWasteToFoundation(foundation);
+		assertTrue(wasteSize == moveCardController.getWasteSize());
+		assertTrue(foundationSize == foundation.size());
+		assertNotEquals(card, foundation.peekTopCard());
+		
+		moveCardController = new MoveCardController(24);
+		foundation = new Foundation(Suits.SPADES);
+		foundation.addCard(new Card(1, Suits.SPADES));
+		foundation.addCard(new Card(2, Suits.SPADES));
+		foundation.addCard(new Card(3, Suits.SPADES));
+		foundation.addCard(new Card(4, Suits.SPADES));
+		card = new Card(5, Suits.SPADES);
+		moveCardController.addCardToWaste(card);
+		wasteSize = moveCardController.getWasteSize();
+		foundationSize = foundation.size();
+		moveCardController.moveFromWasteToFoundation(foundation);
+		assertTrue(wasteSize - 1 == moveCardController.getWasteSize());
+		assertTrue(foundationSize + 1 == foundation.size());
+		assertEquals(card, foundation.peekTopCard());
+		
+		moveCardController = new MoveCardController(24);
+		foundation = new Foundation(Suits.SPADES);
+		card = new Card(1, Suits.SPADES);
+		moveCardController.addCardToWaste(card);
+		wasteSize = moveCardController.getWasteSize();
+		foundationSize = foundation.size();
+		moveCardController.moveFromWasteToFoundation(foundation);
+		assertTrue(wasteSize - 1 == moveCardController.getWasteSize());
+		assertTrue(foundationSize + 1 == foundation.size());
+		assertEquals(card, foundation.peekTopCard());
+		
+		moveCardController = new MoveCardController(24);
+		foundation = new Foundation(Suits.SPADES);
+		foundation.addCard(new Card(1, Suits.SPADES));
+		foundation.addCard(new Card(2, Suits.SPADES));
+		foundation.addCard(new Card(3, Suits.SPADES));
+		foundation.addCard(new Card(4, Suits.SPADES));
+		card = new Card(3, Suits.SPADES);
+		moveCardController.addCardToWaste(card);
+		wasteSize = moveCardController.getWasteSize();
+		foundationSize = foundation.size();
+		moveCardController.moveFromWasteToFoundation(foundation);
+		assertTrue(wasteSize == moveCardController.getWasteSize());
+		assertTrue(foundationSize == foundation.size());
+		assertNotEquals(card, foundation.peekTopCard());
+		
+		moveCardController = new MoveCardController(24);
+		foundation = new Foundation(Suits.SPADES);
+		foundation.addCard(new Card(1, Suits.SPADES));
+		foundation.addCard(new Card(2, Suits.SPADES));
+		foundation.addCard(new Card(3, Suits.SPADES));
+		foundation.addCard(new Card(4, Suits.SPADES));
+		card = new Card(5, Suits.CLUBS);
+		moveCardController.addCardToWaste(card);
+		wasteSize = moveCardController.getWasteSize();
+		foundationSize = foundation.size();
 		moveCardController.moveFromWasteToFoundation(foundation);
 		assertTrue(wasteSize == moveCardController.getWasteSize());
 		assertTrue(foundationSize == foundation.size());
