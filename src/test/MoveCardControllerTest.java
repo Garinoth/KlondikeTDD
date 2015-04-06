@@ -1,5 +1,5 @@
 package test;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import main.Card;
 import main.Foundation;
 import main.MoveCardController;
@@ -51,8 +51,14 @@ public class MoveCardControllerTest {
 		// check order
 		MoveCardController moveCardController = new MoveCardController(24);
 		Foundation foundation = new Foundation(Suits.SPADES);
-		moveCardController.getWaste().addCard(new Card(5, Suits.SPADES));
+		Card card = new Card(5, Suits.SPADES);
+		moveCardController.addCardToWaste(card);
+		int wasteSize = moveCardController.getWasteSize();
+		int foundationSize = foundation.size();
 		moveCardController.moveFromWasteToFoundation(foundation);
+		assertTrue(wasteSize == moveCardController.getWasteSize());
+		assertTrue(foundationSize == foundation.size());
+		assertNotEquals(card, foundation.peekTopCard());
 	}
 	
 	@Test

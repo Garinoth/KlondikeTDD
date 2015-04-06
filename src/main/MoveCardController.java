@@ -44,4 +44,8 @@ public class MoveCardController {
 		return this.waste;
 	}
 
+	public void addCardToWaste(Card card) {
+		this.getWaste().addCard(card);
+	}
+
 }
